@@ -1,7 +1,6 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The below function gives the inverse of the square matrix and stores it in the cache and returns the inverse
 
-## Write a short comment describing this function
+## Create the function to calculate the inverse of the given square matrix and store the output in cache.
 
 makeCacheMatrix <- function(x = matrix()) {
 
@@ -11,9 +10,9 @@ makeCacheMatrix <- function(x = matrix()) {
                 x <<- y
                 invr <<- NULL
         }
-        get <- function() x
-        setinverse <- function(inverse) invr <<- inverse
-        getinverse <- function() invr
+        get <- function() x #x is matrix that is the input argument
+        setinverse <- function(inverse) invr <<- inverse #calls the inverse of the matrix to be calculated
+        getinverse <- function() invr  #return the inverse of the input matrix
         list(set = set, get = get,
              setinverse = setinverse,
              getinverse = getinverse)
@@ -22,7 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## Check whether the inverse of the matrix is already in the cache and return the output accordingly.
 
 cacheSolve <- function(x, ...) {
         m <- x$getinverse()
